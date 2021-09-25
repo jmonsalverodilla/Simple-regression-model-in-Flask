@@ -1,5 +1,5 @@
 # init a base image
-FROM python:3.7.10-buster
+FROM python:3.7.10-slim-buster
 # define the present working directory
 WORKDIR /Simple-regression-model-in-Flask
 # copy the contents into the working dir

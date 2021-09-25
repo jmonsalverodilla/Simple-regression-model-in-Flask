@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Expenses Prediction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170511568-1"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+  gtag('config', 'UA-170511568-1');
+  </script>
+
+  </head>
+
+<body>
+ <div class="login">
+	<h1>Monthly Grocery Expenses</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_expenses')}}"method="post">
+    	<input type="text" name="Income" placeholder="Income" required="required" />
+        <input type="text" name="Household_size" placeholder="Household_size" required="required" />
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Monthly Expenses</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>

@@ -2,6 +2,7 @@
 import numpy as np
 from flask import Flask,render_template,request
 import joblib
+import os
 
 #Flask
 app = Flask(__name__)
@@ -23,5 +24,6 @@ def predict_expenses():
     return render_template('index.html', prediction_text='Predicted monthly grocery expenses $ {}'.format(output))
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5050)
+    port = os.environ.get("PORT", 8080)
+    app.run(debug=True, host="0.0.0.0", port=port)
 

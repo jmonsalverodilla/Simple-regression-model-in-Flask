@@ -14,5 +14,5 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "simple-regression-model-docker" #Must be unique in Heroku
-          heroku_email: "javiermonsalverodilla@gmail.com"
+          heroku_email: "javiermonsalverodilla@gmail.com" #My Heroku email
           usedocker: true
